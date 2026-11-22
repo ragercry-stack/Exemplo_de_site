@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O Cavalcante - Peça aqui</title>
+<style>
+body { font-family: Arial; text-align: center; background: #fff8e1; margin: 0; padding: 20px; }
+.card { background: white; border-radius: 15px; padding: 15px; margin: 10px auto; max-width: 380px; box-shadow: 0 2px 8px #ddd; }
+.btn-add { background: #ff9800; color: white; border: none; padding: 8px 15px; border-radius: 8px; margin-top: 8px; }
+.btn-zap { display: block; background: #25D366; color: white; text-decoration: none; padding: 15px; border-radius: 10px; font-size: 18px; font-weight: bold; margin: 15px auto; max-width: 380px; text-align: center; }
+input { width: 90%; padding: 10px; border-radius: 8px; border: 1px solid #ccc; margin: 5px; }
+</style>
+</head>
+<body>
+
+<h1>🍔🍕 O Cavalcante 🍕🍔</h1>
+<p>📍 Granja Lisboa - Rua Martins de Carvalho, 3311<br>🕐 Aberto todos os dias 17:30 as 22:00<br>⭐ 4.9 - Entrega rápida</p>
+
+<div>
+<button onclick="mostrar('cardapio')" style="padding:10px 15px; border-radius:10px; border:none; background:#ff9800; color:white; font-weight:bold;">🍔 Cardápio</button>
+<button onclick="mostrar('promo')" style="padding:10px 15px; border-radius:10px; border:none; background:#e91e63; color:white; font-weight:bold;">🔥 Promoções</button>
+<button onclick="mostrar('combo')" style="padding:10px 15px; border-radius:10px; border:none; background:#673ab7; color:white; font-weight:bold;">👑 Combo do Dia</button>
+</div>
+
+<div id="cardapio">
+<div class="card">🍔 X-Burguer - R$ 18<br><small>Pão, carne, queijo e alface</small><br><button class="btn-add" onclick="add('X-Burguer', 18)">+ Adicionar</button></div>
+<div class="card">🍔 X-Tudo - R$ 25<br><small>Completo com bacon e ovo</small><br><button class="btn-add" onclick="add('X-Tudo', 25)">+ Adicionar</button></div>
+<div class="card">🍕 Pizza Calabresa - R$ 35<br><small>Calabresa, queijo e orégano</small><br><button class="btn-add" onclick="add('Pizza Calabresa', 35)">+ Adicionar</button></div>
+<div class="card">🍕 Pizza Frango - R$ 35<br><small>Frango, catupiry e milho</small><br><button class="btn-add" onclick="add('Pizza Frango', 35)">+ Adicionar</button></div>
+<div class="card">🥤 Refri Lata - R$ 6<br><small>Cola, guaraná ou laranja - Lata</small><br><button class="btn-add" onclick="add('Refri Lata', 6)">+ Adicionar</button></div>
+</div>
+
+<div id="promo" style="display:none;">
+<div class="card" style="background:#ffe0e0; border:2px solid red;">🔥 PROMO 1 - Leve 2 X-Burguer, ganhe 1 Refri<br><b>De R$ 42 por R$ 36</b><br><button class="btn-add" style="background:red;" onclick="add('PROMO 2 X-Burguer + Refri', 36)">+ Adicionar Promo</button></div>
+<div class="card" style="background:#ffe0e0; border:2px solid red;">🔥 PROMO 2 - Pizza + Refri<br><b>De R$ 41 por R$ 38</b><br><button class="btn-add" style="background:red;" onclick="add('PROMO Pizza + Refri', 38)">+ Adicionar Promo</button></div>
+</div>
+
+<div id="combo" style="display:none;">
+<div class="card" style="background:#fff3cd; border:2px solid #ff9800;">
+<p id="comboDia" style="font-weight:bold; font-size:18px;">Carregando combo...</p>
+<p id="comboDesc"></p>
+<button onclick="addComboDia()" style="background:#673ab7; color:white; border:none; padding:10px 20px; border-radius:8px;">+ Adicionar Combo do Dia</button>
+</div>
+</div>
+
+<div class="card">
+<h3>🛒 Seu pedido</h3>
+<p id="lista">Nenhum item ainda</p>
+<p>Subtotal: R$ <span id="total">0</span></p>
+<p>Desconto cupom: - R$ <span id="desconto">0</span></p>
+<p>Entrega: R$ <span id="taxa">0</span></p>
+<p><b>Total final: R$ <span id="totalFinal">0</span></b></p>
+
+<p><b>🚚 Retirada ou Entrega?</b></p>
+<label><input type="radio" name="tipo" value="Retirada" checked onchange="atualizar()" style="width:auto;"> Retirada no balcão - Grátis</label><br>
+<label><input type="radio" name="tipo" value="Entrega" onchange="atualizar()" style="width:auto;"> Entrega - R$ 5</label><br>
+
+<div id="boxEntrega" style="display:none; background:#fff8e1; padding:10px; border-radius:10px; margin-top:8px;">
+<p style="margin:0; font-weight:bold;">📦 Dados da entrega</p>
+<input id="endereco" placeholder="Rua, número, bairro">
+<input id="cep" placeholder="CEP - ex: 60440-000">
+<input id="complemento" placeholder="Complemento - ex: casa, ap, ponto de referência">
+</div>
+
+<p><b>💳 Pagamento</b></p>
+<label><input type="radio" name="pag" value="Pix" checked onchange="atualizar()" style="width:auto;"> Pix</label>
+<label><input type="radio" name="pag" value="Cartão" onchange="atualizar()" style="width:auto;"> Cartão</label>
+<label><input type="radio" name="pag" value="Dinheiro" onchange="atualizar()" style="width:auto;"> Dinheiro</label><br>
+<input id="troco" placeholder="Troco pra quanto? Ex: 50" style="display:none;">
+
+<p><b>🎟️ Cupom</b></p>
+<input id="cupom" placeholder="Ex: CORVO10" style="width:60%;">
+<button onclick="aplicarCupom()" style="padding:10px; border-radius:8px; background:#000; color:white; border:none;">Aplicar</button>
+<p id="msgCupom" style="font-size:12px; color:green;"></p>
+
+<input id="nome" placeholder="Seu nome">
+<input id="obs" placeholder="Observação: ex: sem cebola">
+<br><button onclick="limpar()" style="background:#ccc; border:none; padding:8px 15px; border-radius:8px; margin-top:8px;">🗑️ Limpar pedido</button>
+</div>
+
+<a id="zap" href="#" class="btn-zap">📲 Enviar pedido no WhatsApp</a>
+<p style="text-align:center; font-size:12px; color:#888;">Exemplo feito pra demonstração</p>
+
+<script>
+let carrinho = {}
+let total = 0
+let desconto = 0
+let cupomAtivo = ""
+let comboHoje = {nome: "COMBO CORVO", preco: 35, desc: "X-Tudo + Refri"}
+let combos = {
+0: {nome: "COMBO DOMINGO", preco: 32, desc: "Pizza Calabresa + Refri - Domingo é dia de pizza!"},
+1: {nome: "COMBO SEGUNDA", preco: 20, desc: "X-Burguer + Refri - Começa a semana baratinho"},
+2: {nome: "COMBO TERÇA", preco: 22, desc: "X-Tudo + Refri - Terça do X-Tudo"},
+3: {nome: "COMBO QUARTA", preco: 35, desc: "COMBO CORVO - X-Tudo + Refri"},
+4: {nome: "COMBO QUINTA", preco: 30, desc: "2 X-Burguer - Quinta do dobro"},
+5: {nome: "COMBO SEXTA", preco: 38, desc: "Pizza Frango + Refri - Sextou!"},
+6: {nome: "COMBO SÁBADO", preco: 35, desc: "COMBO CORVO - X-Tudo + Refri"}
+}
+let hoje = new Date().getDay()
+comboHoje = combos[hoje]
+document.getElementById('comboDia').innerText = "👑 " + comboHoje.nome + " - R$ " + comboHoje.preco
+document.getElementById('comboDesc').innerText = comboHoje.desc
+function mostrar(aba) {
+  document.getElementById('cardapio').style.display = 'none'
+  document.getElementById('promo').style.display = 'none'
+  document.getElementById('combo').style.display = 'none'
+  document.getElementById(aba).style.display = 'block'
+}
+function add(nome, preco) {
+  if (carrinho[nome]) { carrinho[nome].qtd = carrinho[nome].qtd + 1 }
+  else { carrinho[nome] = {qtd: 1, preco: preco} }
+  atualizar()
+}
+function addComboDia() { add(comboHoje.nome, comboHoje.preco) }
+function limpar() { carrinho = {}; desconto = 0; cupomAtivo = ""; document.getElementById('cupom').value = ""; document.getElementById('msgCupom').innerText = ""; atualizar() }
+function aplicarCupom() {
+  let c = document.getElementById('cupom').value.toUpperCase().trim()
+  if (c == "CORVO10") { cupomAtivo = c; document.getElementById('msgCupom').innerText = "Cupom CORVO10 aplicado! 10% OFF" }
+  else if (c == "CAVALCANTE5") { cupomAtivo = c; document.getElementById('msgCupom').innerText = "Cupom CAVALCANTE5 aplicado! R$ 5 OFF" }
+  else { cupomAtivo = ""; document.getElementById('msgCupom').innerText = "Cupom inválido, tenta CORVO10" }
+  atualizar()
+}
+function atualizar() {
+  total = 0
+  let texto = ""
+  for (let nome in carrinho) {
+    let item = carrinho[nome]
+    texto = texto + item.qtd + "x " + nome + " - R$ " + (item.qtd * item.preco) + "<br>"
+    total = total + (item.qtd * item.preco)
+  }
+  if (texto == "") { texto = "Nenhum item ainda" }
+  document.getElementById('lista').innerHTML = texto
+  document.getElementById('total').innerText = total
+  if (cupomAtivo == "CORVO10") { desconto = Math.round(total * 0.10) }
+  else if (cupomAtivo == "CAVALCANTE5") { desconto = 5 }
+  else { desconto = 0 }
+  if (desconto > total) { desconto = total }
+  document.getElementById('desconto').innerText = desconto
+  let tipo = document.querySelector('input[name="tipo"]:checked').value
+  let taxa = 0
+  if (tipo == "Entrega") { taxa = 5; document.getElementById('boxEntrega').style.display = 'block' }
+  else { document.getElementById('boxEntrega').style.display = 'none' }
+  document.getElementById('taxa').innerText = taxa
+  let pag = document.querySelector('input[name="pag"]:checked').value
+  if (pag == "Dinheiro") { document.getElementById('troco').style.display = 'block' }
+  else { document.getElementById('troco').style.display = 'none' }
+  let final = total - desconto + taxa
+  if (final < 0) { final = 0 }
+  document.getElementById('totalFinal').innerText = final
+  let nomeCliente = document.getElementById('nome').value
+  let obs = document.getElementById('obs').value
+  let endereco = document.getElementById('endereco').value
+  let cep = document.getElementById('cep').value
+  let complemento = document.getElementById('complemento').value
+  let troco = document.getElementById('troco').value
+  let msg = "Oi! Quero pedir no Cavalcante:%0A" + texto.replaceAll("<br>", "%0A") + "%0A Subtotal: R$ " + total + "%0A Desconto: - R$ " + desconto + "%0A Entrega: R$ " + taxa + "%0A Total: R$ " + final + "%0A Tipo: " + tipo + "%0A Endereço: " + endereco + "%0A CEP: " + cep + "%0A Complemento: " + complemento + "%0A Pagamento: " + pag + "%0A Troco: " + troco + "%0A Nome: " + nomeCliente + "%0A Obs: " + obs
+  document.getElementById('zap').href = "https://wa.me/5585999999999?text=" + msg
+}
+document.getElementById('nome').addEventListener('input', atualizar)
+document.getElementById('obs').addEventListener('input', atualizar)
+document.getElementById('endereco').addEventListener('input', atualizar)
+document.getElementById('cep').addEventListener('input', atualizar)
+document.getElementById('complemento').addEventListener('input', atualizar)
+document.getElementById('troco').addEventListener('input', atualizar)
+</script>
+</body>
+</html>
