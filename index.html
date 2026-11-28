@@ -1,168 +1,75 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>O Cavalcante - Peça aqui</title>
+<title>Burger da Vila - DEMONSTRAÇÃO</title>
 <style>
-body { font-family: Arial; text-align: center; background: #fff8e1; margin: 0; padding: 20px; }
-.card { background: white; border-radius: 15px; padding: 15px; margin: 10px auto; max-width: 380px; box-shadow: 0 2px 8px #ddd; }
-.btn-add { background: #ff9800; color: white; border: none; padding: 8px 15px; border-radius: 8px; margin-top: 8px; }
-.btn-zap { display: block; background: #25D366; color: white; text-decoration: none; padding: 15px; border-radius: 10px; font-size: 18px; font-weight: bold; margin: 15px auto; max-width: 380px; text-align: center; }
-input { width: 90%; padding: 10px; border-radius: 8px; border: 1px solid #ccc; margin: 5px; }
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:#0a0a0a;color:#fff;padding-bottom:130px}
+.demo{background:#ff0000;color:#fff;text-align:center;padding:8px;font-weight:bold;font-size:13px}
+header{background:#ff6b00;color:#fff;padding:20px 16px;text-align:center}
+header h1{font-size:24px}
+header p{font-size:14px;margin-top:4px}
+.aberto{display:inline-block;background:#22c55e;color:#fff;padding:5px 12px;border-radius:20px;font-size:12px;font-weight:bold;margin-top:8px}
+.fechado{display:inline-block;background:#ef4444;color:#fff;padding:5px 12px;border-radius:20px;font-size:12px;font-weight:bold;margin-top:8px}
+.hero{padding:22px 16px;text-align:center}
+.hero h2{color:#ffcc00;font-size:22px}
+.hero p{color:#ddd;margin-top:6px;font-size:15px}
+.promo{background:#ffcc00;color:#000;padding:14px;border-radius:12px;text-align:center;font-weight:bold;margin:0 16px;font-size:15px}
+.section{padding:10px 16px}
+.section h3{color:#ffcc00;margin:16px 0 10px;font-size:19px}
+.card{background:#1a1a1a;border:1px solid #2d2d2d;border-radius:16px;padding:16px;margin:10px 0;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.card small{color:#aaa;font-size:12px}
+.price{color:#ffcc00;font-weight:bold}
+.badge{background:#ff6b00;color:#fff;font-size:10px;font-weight:bold;padding:3px 7px;border-radius:10px;margin-left:6px}
+.qtd-box{display:flex;align-items:center;gap:6px}
+.btn-menos{background:#ff4444;color:#fff;border:none;width:32px;height:32px;border-radius:8px;font-size:18px;font-weight:bold;cursor:pointer}
+.btn-mais{background:#22c55e;color:#fff;border:none;width:32px;height:32px;border-radius:8px;font-size:18px;font-weight:bold;cursor:pointer}
+.qtd-num{font-weight:bold;min-width:20px;text-align:center}
+.info{padding:16px;font-size:14px;line-height:1.6;color:#ddd}
+input,select{width:100%;padding:12px;border-radius:10px;border:1px solid #333;background:#222;color:#fff;margin-top:8px}
+label{font-size:14px;color:#ffcc00;font-weight:bold}
+.map-btn{display:block;text-align:center;background:#fff;color:#000;padding:12px;border-radius:10px;font-weight:bold;text-decoration:none;margin-top:10px}
+.cart{position:fixed;bottom:0;left:0;right:0;background:#111;border-top:3px solid #ff6b00;padding:10px 16px}
+.cart-top{display:flex;justify-content:space-between;font-size:14px;margin-bottom:8px}
+.btn-big{width:100%;padding:13px;font-size:16px;border-radius:12px;background:#25D366;color:#fff;border:none;font-weight:bold;cursor:pointer}
+.btn-limpar{background:none;border:none;color:#ff6b6b;font-size:12px;cursor:pointer;text-decoration:underline}
+.footer-demo{text-align:center;font-size:12px;color:#888;padding:16px}
 </style>
 </head>
 <body>
-
-<h1>🍔🍕 O Cavalcante 🍕🍔</h1>
-<p>📍 Granja Lisboa - Rua Martins de Carvalho, 3311<br>🕐 Aberto todos os dias 17:30 as 22:00<br>⭐ 4.9 - Entrega rápida</p>
-
-<div>
-<button onclick="mostrar('cardapio')" style="padding:10px 15px; border-radius:10px; border:none; background:#ff9800; color:white; font-weight:bold;">🍔 Cardápio</button>
-<button onclick="mostrar('promo')" style="padding:10px 15px; border-radius:10px; border:none; background:#e91e63; color:white; font-weight:bold;">🔥 Promoções</button>
-<button onclick="mostrar('combo')" style="padding:10px 15px; border-radius:10px; border:none; background:#673ab7; color:white; font-weight:bold;">👑 Combo do Dia</button>
+<div class="demo">🚧 SITE DE DEMONSTRAÇÃO - DADOS FICTÍCIOS PARA EXEMPLO DE PORTFÓLIO 🚧</div>
+<header><h1>🍔 BURGER DA VILA</h1><p>Lanchonete | Delivery Rápido</p><span id="status" class="aberto">● Aberto agora</span></header>
+<div class="hero"><h2>Seu lanche pronto em 30 min</h2><p>Burger artesanal, batata crocante e suco gelado.</p></div>
+<div class="promo">🔥 PROMO: X-Burguer + Batata + Refri - R$ 29,90</div>
+<div class="section"><h3>🍔 Lanches</h3>
+<div class="card"><div><b>X-Burguer</b><br><small>Pão, carne 90g, queijo | 180g</small><br><span class="price">R$ 18,00</span></div><div class="qtd-box"><button class="btn-menos" onclick="mudar(0,'Lanche - X-Burguer',18,-1)">-</button><span class="qtd-num" id="q0">0</span><button class="btn-mais" onclick="mudar(0,'Lanche - X-Burguer',18,1)">+</button></div></div>
+<div class="card"><div><b>X-Salada</b><br><small>Alface, tomate, queijo | 220g</small><br><span class="price">R$ 22,00</span></div><div class="qtd-box"><button class="btn-menos" onclick="mudar(1,'Lanche - X-Salada',22,-1)">-</button><span class="qtd-num" id="q1">0</span><button class="btn-mais" onclick="mudar(1,'Lanche - X-Salada',22,1)">+</button></div></div>
+<div class="card"><div><b>X-Bacon</b><br><small>Bacon crocante, cheddar | 250g</small><br><span class="price">R$ 25,00</span></div><div class="qtd-box"><button class="btn-menos" onclick="mudar(2,'Lanche - X-Bacon',25,-1)">-</button><span class="qtd-num" id="q2">0</span><button class="btn-mais" onclick="mudar(2,'Lanche - X-Bacon',25,1)">+</button></div></div>
+<div class="card"><div><b>X-Tudo <span class="badge">MAIS PEDIDO</span></b><br><small>Tudo que tem direito | 350g</small><br><span class="price">R$ 30,00</span></div><div class="qtd-box"><button class="btn-menos" onclick="mudar(3,'Lanche - X-Tudo',30,-1)">-</button><span class="qtd-num" id="q3">0</span><button class="btn-mais" onclick="mudar(3,'Lanche - X-Tudo',30,1)">+</button></div></div>
 </div>
-
-<div id="cardapio">
-<div class="card">🍔 X-Burguer - R$ 18<br><small>Pão, carne, queijo e alface</small><br><button class="btn-add" onclick="add('X-Burguer', 18)">+ Adicionar</button></div>
-<div class="card">🍔 X-Tudo - R$ 25<br><small>Completo com bacon e ovo</small><br><button class="btn-add" onclick="add('X-Tudo', 25)">+ Adicionar</button></div>
-<div class="card">🍕 Pizza Calabresa - R$ 35<br><small>Calabresa, queijo e orégano</small><br><button class="btn-add" onclick="add('Pizza Calabresa', 35)">+ Adicionar</button></div>
-<div class="card">🍕 Pizza Frango - R$ 35<br><small>Frango, catupiry e milho</small><br><button class="btn-add" onclick="add('Pizza Frango', 35)">+ Adicionar</button></div>
-<div class="card">🥤 Refri Lata - R$ 6<br><small>Cola, guaraná ou laranja - Lata</small><br><button class="btn-add" onclick="add('Refri Lata', 6)">+ Adicionar</button></div>
+<div class="section"><h3>🍟 Acompanhamentos e Bebidas</h3>
+<div class="card"><div><b>Batata Frita P</b><br><small>Crocante, sal | 120g</small><br><span class="price">R$ 12,00</span></div><div class="qtd-box"><button class="btn-menos" onclick="mudar(4,'Acompanhamento - Batata Frita P',12,-1)">-</button><span class="qtd-num" id="q4">0</span><button class="btn-mais" onclick="mudar(4,'Acompanhamento - Batata Frita P',12,1)">+</button></div></div>
+<div class="card"><div><b>Refrigerante Lata</b><br><small>Gelado | 350ml</small><br><span class="price">R$ 6,00</span></div><div class="qtd-box"><button class="btn-menos" onclick="mudar(5,'Bebida - Refrigerante Lata',6,-1)">-</button><span class="qtd-num" id="q5">0</span><button class="btn-mais" onclick="mudar(5,'Bebida - Refrigerante Lata',6,1)">+</button></div></div>
+<div class="card"><div><b>Suco Natural</b><br><small>Laranja, sem açúcar | 300ml</small><br><span class="price">R$ 8,00</span></div><div class="qtd-box"><button class="btn-menos" onclick="mudar(6,'Bebida - Suco Natural',8,-1)">-</button><span class="qtd-num" id="q6">0</span><button class="btn-mais" onclick="mudar(6,'Bebida - Suco Natural',8,1)">+</button></div></div>
 </div>
-
-<div id="promo" style="display:none;">
-<div class="card" style="background:#ffe0e0; border:2px solid red;">🔥 PROMO 1 - Leve 2 X-Burguer, ganhe 1 Refri<br><b>De R$ 42 por R$ 36</b><br><button class="btn-add" style="background:red;" onclick="add('PROMO 2 X-Burguer + Refri', 36)">+ Adicionar Promo</button></div>
-<div class="card" style="background:#ffe0e0; border:2px solid red;">🔥 PROMO 2 - Pizza + Refri<br><b>De R$ 41 por R$ 38</b><br><button class="btn-add" style="background:red;" onclick="add('PROMO Pizza + Refri', 38)">+ Adicionar Promo</button></div>
+<div class="info">
+<input id="nome" placeholder="Seu nome e endereço: ex: João - Rua A, 123">
+<label>💳 Método de Pagamento</label>
+<select id="pagamento"><option value="Pix">Pix</option><option value="Dinheiro">Dinheiro</option><option value="Cartão de Crédito">Cartão de Crédito</option><option value="Cartão de Débito">Cartão de Débito</option><option value="Pagar na entrega">Pagar na entrega</option></select>
+<p style="margin-top:12px">📍 Rua Exemplo, 123 - Centro<br>🕐 Ter a Dom 18h às 23h<br>📲 WhatsApp: (21) 99999-9999</p>
+<a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Rua+Exemplo+123+Centro" target="_blank">📍 Como Chegar - Abrir no Mapa</a>
 </div>
-
-<div id="combo" style="display:none;">
-<div class="card" style="background:#fff3cd; border:2px solid #ff9800;">
-<p id="comboDia" style="font-weight:bold; font-size:18px;">Carregando combo...</p>
-<p id="comboDesc"></p>
-<button onclick="addComboDia()" style="background:#673ab7; color:white; border:none; padding:10px 20px; border-radius:8px;">+ Adicionar Combo do Dia</button>
-</div>
-</div>
-
-<div class="card">
-<h3>🛒 Seu pedido</h3>
-<p id="lista">Nenhum item ainda</p>
-<p>Subtotal: R$ <span id="total">0</span></p>
-<p>Desconto cupom: - R$ <span id="desconto">0</span></p>
-<p>Entrega: R$ <span id="taxa">0</span></p>
-<p><b>Total final: R$ <span id="totalFinal">0</span></b></p>
-
-<p><b>🚚 Retirada ou Entrega?</b></p>
-<label><input type="radio" name="tipo" value="Retirada" checked onchange="atualizar()" style="width:auto;"> Retirada no balcão - Grátis</label><br>
-<label><input type="radio" name="tipo" value="Entrega" onchange="atualizar()" style="width:auto;"> Entrega - R$ 5</label><br>
-
-<div id="boxEntrega" style="display:none; background:#fff8e1; padding:10px; border-radius:10px; margin-top:8px;">
-<p style="margin:0; font-weight:bold;">📦 Dados da entrega</p>
-<input id="endereco" placeholder="Rua, número, bairro">
-<input id="cep" placeholder="CEP - ex: 60440-000">
-<input id="complemento" placeholder="Complemento - ex: casa, ap, ponto de referência">
-</div>
-
-<p><b>💳 Pagamento</b></p>
-<label><input type="radio" name="pag" value="Pix" checked onchange="atualizar()" style="width:auto;"> Pix</label>
-<label><input type="radio" name="pag" value="Cartão" onchange="atualizar()" style="width:auto;"> Cartão</label>
-<label><input type="radio" name="pag" value="Dinheiro" onchange="atualizar()" style="width:auto;"> Dinheiro</label><br>
-<input id="troco" placeholder="Troco pra quanto? Ex: 50" style="display:none;">
-
-<p><b>🎟️ Cupom</b></p>
-<input id="cupom" placeholder="Ex: CORVO10" style="width:60%;">
-<button onclick="aplicarCupom()" style="padding:10px; border-radius:8px; background:#000; color:white; border:none;">Aplicar</button>
-<p id="msgCupom" style="font-size:12px; color:green;"></p>
-
-<input id="nome" placeholder="Seu nome">
-<input id="obs" placeholder="Observação: ex: sem cebola">
-<br><button onclick="limpar()" style="background:#ccc; border:none; padding:8px 15px; border-radius:8px; margin-top:8px;">🗑️ Limpar pedido</button>
-</div>
-
-<a id="zap" href="#" class="btn-zap">📲 Enviar pedido no WhatsApp</a>
-<p style="text-align:center; font-size:12px; color:#888;">Exemplo feito pra demonstração</p>
-
+<p class="footer-demo">Exemplo de demonstração - nomes, preços, avaliações e endereço fictícios, apenas para mostrar o modelo de site.</p>
+<div class="cart"><div class="cart-top"><span>🛒 Itens: <b id="qtd">0</b></span><span><button class="btn-limpar" onclick="limpar()">Limpar tudo</button> | Total: <b id="total" style="color:#ffcc00">R$ 0,00</b></span></div><button type="button" class="btn-big" onclick="enviar()">📲 Enviar Pedido Completo no WhatsApp</button></div>
 <script>
-let carrinho = {}
-let total = 0
-let desconto = 0
-let cupomAtivo = ""
-let comboHoje = {nome: "COMBO CORVO", preco: 35, desc: "X-Tudo + Refri"}
-let combos = {
-0: {nome: "COMBO DOMINGO", preco: 32, desc: "Pizza Calabresa + Refri - Domingo é dia de pizza!"},
-1: {nome: "COMBO SEGUNDA", preco: 20, desc: "X-Burguer + Refri - Começa a semana baratinho"},
-2: {nome: "COMBO TERÇA", preco: 22, desc: "X-Tudo + Refri - Terça do X-Tudo"},
-3: {nome: "COMBO QUARTA", preco: 35, desc: "COMBO CORVO - X-Tudo + Refri"},
-4: {nome: "COMBO QUINTA", preco: 30, desc: "2 X-Burguer - Quinta do dobro"},
-5: {nome: "COMBO SEXTA", preco: 38, desc: "Pizza Frango + Refri - Sextou!"},
-6: {nome: "COMBO SÁBADO", preco: 35, desc: "COMBO CORVO - X-Tudo + Refri"}
-}
-let hoje = new Date().getDay()
-comboHoje = combos[hoje]
-document.getElementById('comboDia').innerText = "👑 " + comboHoje.nome + " - R$ " + comboHoje.preco
-document.getElementById('comboDesc').innerText = comboHoje.desc
-function mostrar(aba) {
-  document.getElementById('cardapio').style.display = 'none'
-  document.getElementById('promo').style.display = 'none'
-  document.getElementById('combo').style.display = 'none'
-  document.getElementById(aba).style.display = 'block'
-}
-function add(nome, preco) {
-  if (carrinho[nome]) { carrinho[nome].qtd = carrinho[nome].qtd + 1 }
-  else { carrinho[nome] = {qtd: 1, preco: preco} }
-  atualizar()
-}
-function addComboDia() { add(comboHoje.nome, comboHoje.preco) }
-function limpar() { carrinho = {}; desconto = 0; cupomAtivo = ""; document.getElementById('cupom').value = ""; document.getElementById('msgCupom').innerText = ""; atualizar() }
-function aplicarCupom() {
-  let c = document.getElementById('cupom').value.toUpperCase().trim()
-  if (c == "CORVO10") { cupomAtivo = c; document.getElementById('msgCupom').innerText = "Cupom CORVO10 aplicado! 10% OFF" }
-  else if (c == "CAVALCANTE5") { cupomAtivo = c; document.getElementById('msgCupom').innerText = "Cupom CAVALCANTE5 aplicado! R$ 5 OFF" }
-  else { cupomAtivo = ""; document.getElementById('msgCupom').innerText = "Cupom inválido, tenta CORVO10" }
-  atualizar()
-}
-function atualizar() {
-  total = 0
-  let texto = ""
-  for (let nome in carrinho) {
-    let item = carrinho[nome]
-    texto = texto + item.qtd + "x " + nome + " - R$ " + (item.qtd * item.preco) + "<br>"
-    total = total + (item.qtd * item.preco)
-  }
-  if (texto == "") { texto = "Nenhum item ainda" }
-  document.getElementById('lista').innerHTML = texto
-  document.getElementById('total').innerText = total
-  if (cupomAtivo == "CORVO10") { desconto = Math.round(total * 0.10) }
-  else if (cupomAtivo == "CAVALCANTE5") { desconto = 5 }
-  else { desconto = 0 }
-  if (desconto > total) { desconto = total }
-  document.getElementById('desconto').innerText = desconto
-  let tipo = document.querySelector('input[name="tipo"]:checked').value
-  let taxa = 0
-  if (tipo == "Entrega") { taxa = 5; document.getElementById('boxEntrega').style.display = 'block' }
-  else { document.getElementById('boxEntrega').style.display = 'none' }
-  document.getElementById('taxa').innerText = taxa
-  let pag = document.querySelector('input[name="pag"]:checked').value
-  if (pag == "Dinheiro") { document.getElementById('troco').style.display = 'block' }
-  else { document.getElementById('troco').style.display = 'none' }
-  let final = total - desconto + taxa
-  if (final < 0) { final = 0 }
-  document.getElementById('totalFinal').innerText = final
-  let nomeCliente = document.getElementById('nome').value
-  let obs = document.getElementById('obs').value
-  let endereco = document.getElementById('endereco').value
-  let cep = document.getElementById('cep').value
-  let complemento = document.getElementById('complemento').value
-  let troco = document.getElementById('troco').value
-  let msg = "Oi! Quero pedir no Cavalcante:%0A" + texto.replaceAll("<br>", "%0A") + "%0A Subtotal: R$ " + total + "%0A Desconto: - R$ " + desconto + "%0A Entrega: R$ " + taxa + "%0A Total: R$ " + final + "%0A Tipo: " + tipo + "%0A Endereço: " + endereco + "%0A CEP: " + cep + "%0A Complemento: " + complemento + "%0A Pagamento: " + pag + "%0A Troco: " + troco + "%0A Nome: " + nomeCliente + "%0A Obs: " + obs
-  document.getElementById('zap').href = "https://wa.me/5518997195758?text=" + msg
-}
-document.getElementById('nome').addEventListener('input', atualizar)
-document.getElementById('obs').addEventListener('input', atualizar)
-document.getElementById('endereco').addEventListener('input', atualizar)
-document.getElementById('cep').addEventListener('input', atualizar)
-document.getElementById('complemento').addEventListener('input', atualizar)
-document.getElementById('troco').addEventListener('input', atualizar)
+let carrinho={};
+function mudar(id,nome,preco,delta){if(!carrinho[id]){carrinho[id]={nome:nome,preco:preco,qtd:0};}carrinho[id].qtd=carrinho[id].qtd+delta;if(carrinho[id].qtd<=0){delete carrinho[id];document.getElementById('q'+id).innerText=0;}else{document.getElementById('q'+id).innerText=carrinho[id].qtd;}atualizar();}
+function atualizar(){let total=0;let totalItens=0;for(let k in carrinho){total=total+carrinho[k].preco*carrinho[k].qtd;totalItens=totalItens+carrinho[k].qtd;}document.getElementById('qtd').innerText=totalItens;document.getElementById('total').innerText='R$ '+total.toFixed(2).replace('.',',');}
+function limpar(){carrinho={};for(let i=0;i<7;i++){document.getElementById('q'+i).innerText=0;}atualizar();}
+function enviar(){let totalItens=0;for(let k in carrinho){totalItens=totalItens+carrinho[k].qtd;}if(totalItens===0){alert('Adicione um item primeiro! Aperte +');return;}let nome=document.getElementById('nome').value||'Cliente';let pagamento=document.getElementById('pagamento').value;let texto='NOVO PEDIDO - BURGER DA VILA - DEMONSTRAÇÃO%0A%0A';for(let k in carrinho){texto+='- '+carrinho[k].qtd+'x '+carrinho[k].nome+' - R$ '+(carrinho[k].preco*carrinho[k].qtd).toFixed(2)+'%0A';}texto+='%0ACliente/Endereço: '+nome+'%0APagamento: '+pagamento+'%0ATotal: '+document.getElementById('total').innerText;window.open('https://wa.me/5521999999999?text='+texto,'_blank');}
+let agora=new Date();let hora=agora.getHours()+agora.getMinutes()/60;let aberto=false;if(hora>=18&&hora<23){aberto=true;}let s=document.getElementById('status');if(aberto){s.innerText='● Aberto agora';s.className='aberto';}else{s.innerText='● Fechado - abre 18h';s.className='fechado';}
 </script>
 </body>
 </html>
